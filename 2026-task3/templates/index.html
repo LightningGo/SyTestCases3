@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Диагностика обращения в техподдержку 1С</h1>
+<p class="meta">Ответьте на вопросы о проблеме клиента. Система подберёт вероятную причину, действия, исполнителя и приоритет.</p>
+
+<form method="post" action="/diagnose">
+    <div class="card">
+        <h3>1. Что случилось?</h3>
+        {% for key, label in symptoms.items() %}
+            <label class="opt"><input type="radio" name="symptom" value="{{ key }}" required> {{ label }}</label>
+        {% endfor %}
+    </div>
+
+    <div class="card">
+        <h3>2. Тип информационной базы</h3>
+        {% for key, label in db_types.items() %}
+            <label class="opt"><input type="radio" name="db_type" value="{{ key }}" required> {{ label }}</label>
+        {% endfor %}
+    </div>
+
+    <div class="card">
+        <h3>3. Сколько пользователей работает в базе?</h3>
+        <input type="number" name="users" min="1" value="1" required>
+    </div>
+
+    <div class="card">
+        <h3>4. У кого проявляется проблема?</h3>
+        {% for key, label in scopes.items() %}
+            <label class="opt"><input type="radio" name="scope" value="{{ key }}" required> {{ label }}</label>
+        {% endfor %}
+    </div>
+
+    <div class="card">
+        <h3>5. Было ли недавно обновление платформы или конфигурации?</h3>
+        {% for key, label in answers.items() %}
+            <label class="opt"><input type="radio" name="recent_update" value="{{ key }}" required> {{ label }}</label>
+        {% endfor %}
+    </div>
+
+    <button class="btn" type="submit">Получить решение</button>
+</form>
+{% endblock %}

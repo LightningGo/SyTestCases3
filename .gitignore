@@ -1,0 +1,20 @@
+# Локальные зависимости и кэши
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.expo/
+/2026-task4/node_modules/
+/2026-task4/test-results/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+
+# Настоящие ответы участников остаются локально
+/2026-task5/results*.csv
+/2026-task5/summary.txt
+
+# Ресурсы web-demo/assets/node_modules нужны готовому сайту.

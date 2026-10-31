@@ -1,0 +1,61 @@
+import { StyleSheet } from 'react-native';
+
+export const colors = {
+  primary: '#1f6feb',
+  bg: '#f3f5f9',
+  card: '#ffffff',
+  text: '#1c2430',
+  muted: '#6b7685',
+  border: '#d9dee7',
+  danger: '#d1352b',
+};
+
+export const s = StyleSheet.create({
+  screen: { flex: 1, backgroundColor: colors.bg },
+  content: { padding: 16, width: '100%', maxWidth: 700, alignSelf: 'center' },
+  card: {
+    backgroundColor: colors.card,
+    borderRadius: 12,
+    padding: 14,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  title: { fontSize: 17, fontWeight: '600', color: colors.text },
+  text: { fontSize: 15, color: colors.text, lineHeight: 21 },
+  muted: { fontSize: 13, color: colors.muted },
+  label: { fontSize: 14, fontWeight: '600', color: colors.text, marginTop: 14, marginBottom: 6 },
+  input: {
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    fontSize: 16,
+    color: colors.text,
+  },
+  row: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  chip: {
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.card,
+  },
+  chipActive: { backgroundColor: colors.primary, borderColor: colors.primary },
+  chipText: { fontSize: 14, color: colors.text },
+  chipTextActive: { color: '#fff' },
+  button: {
+    backgroundColor: colors.primary,
+    borderRadius: 10,
+    paddingVertical: 13,
+    alignItems: 'center',
+    flex: 1,
+  },
+  buttonDanger: { backgroundColor: colors.danger },
+  buttonText: { color: '#fff', fontSize: 16, fontWeight: '600' },
+  error: { color: colors.danger, marginTop: 10, fontSize: 14 },
+});

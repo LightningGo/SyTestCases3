@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Экспертная система 1С</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f4f6f8; color: #222; }
+        .container { max-width: 820px; margin: 0 auto; }
+        nav { background: #c0392b; padding: 12px; margin-bottom: 20px; }
+        nav a { color: white; margin-right: 15px; text-decoration: none; }
+        h1, h2, h3 { color: #2c3e50; }
+        .card { background: white; padding: 15px; margin-bottom: 12px; border: 1px solid #ddd; }
+        .btn { padding: 10px 18px; background: #c0392b; color: white; border: none; cursor: pointer; font-size: 15px; text-decoration: none; display: inline-block; }
+        .btn-gray { background: #7f8c8d; }
+        label.opt { display: block; margin: 6px 0; cursor: pointer; }
+        input[type=number] { padding: 8px; width: 120px; border: 1px solid #ccc; }
+        .flash { background: #fdecea; padding: 10px; margin-bottom: 10px; border: 1px solid #f5c6cb; }
+        .meta { color: #666; font-size: 14px; }
+        .cf { float: right; background: #ecf0f1; padding: 3px 8px; font-size: 14px; }
+        .prio { display: inline-block; padding: 6px 12px; color: white; font-weight: bold; }
+        .prio-Критический { background: #8e0000; }
+        .prio-Высокий { background: #e67e22; }
+        .prio-Средний { background: #2980b9; }
+        .prio-Низкий { background: #27ae60; }
+        table { border-collapse: collapse; width: 100%; }
+        td { padding: 6px; border-bottom: 1px solid #eee; vertical-align: top; }
+        ol li { margin-bottom: 6px; }
+        pre { background: #2c3e50; color: #ecf0f1; padding: 15px; overflow-x: auto; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/"><b>Экспертная система 1С</b></a>
+            <a href="/">Новое обращение</a>
+            <a href="/knowledge">База знаний</a>
+        </nav>
+        {% with messages = get_flashed_messages() %}
+            {% for m in messages %}<div class="flash">{{ m }}</div>{% endfor %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
